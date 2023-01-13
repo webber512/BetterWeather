@@ -1,0 +1,63 @@
+label {
+  font-weight: bold;
+}
+.main {
+	padding: 65px 15px 15px 70px;
+}
+.main-e {
+	padding: 0 20px 60px 75px;
+}
+.dialog-editor {
+	height: 400px;
+}
+.editor-xl {
+	height: 600px;
+}
+iframe {
+	width: 99%;
+	height: 380px;
+	border: 1.1px solid black;
+}
+iframe.xl {
+	width: 99%;
+	height: 580px;
+	border: 1.1px solid black;
+}
+iframe.md {
+	width: 99%;
+	height: 480px;
+	border: 1.1px solid black;
+}
+iframe.expanded {
+	width: 800px;
+}
+iframe.contracted {
+	width: 480px;
+}
+.btn {
+  margin-left: 5px;
+}
+.btn-nl {
+  margin-top: 32px;
+}
+.section {
+  margin-top: 65px;
+}
+@media (max-width: 576px) {
+  .btn-nl {
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+	.main {
+		padding: 50px 15px 15px 55px;
+  }
+  .main-e {
+    padding: 0 15px 60px 15px;
+    margin-left: 40px;
+  }
+}
+.listoficons .row {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding: 3px;
+}

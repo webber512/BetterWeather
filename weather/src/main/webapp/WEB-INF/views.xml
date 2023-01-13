@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+	
+	
+	<!-- Default Templates -->
+	<definition name=".default" template="/WEB-INF/layouts/stdLayout.jsp">
+		<put-attribute name="title" value="O'Reilly Automotive Project Template" />
+	</definition>
+	<definition name="error" template="/WEB-INF/views/default/error.jsp"></definition>
+	<definition name="success" template="/WEB-INF/views/default/success.jsp"></definition>
+	<definition name="donothing" template="/WEB-INF/DoNothing.jsp"></definition>
+	<definition name="403" template="/WEB-INF/403.jsp"></definition> 	
+</tiles-definitions>
