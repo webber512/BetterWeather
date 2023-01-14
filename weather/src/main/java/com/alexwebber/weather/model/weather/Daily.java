@@ -1,8 +1,12 @@
 
-package com.alexwebber.weather.model;
+package com.alexwebber.weather.model.weather;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -17,44 +21,48 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "dt",
     "sunrise",
     "sunset",
+    "moonrise",
+    "moonset",
+    "moon_phase",
     "temp",
     "feels_like",
     "pressure",
     "humidity",
     "dew_point",
-    "uvi",
-    "clouds",
-    "visibility",
     "wind_speed",
     "wind_deg",
     "wind_gust",
-    "weather"
+    "weather",
+    "clouds",
+    "pop",
+    "rain",
+    "uvi"
 })
 @Generated("jsonschema2pojo")
-public class Current {
+public class Daily {
 
     @JsonProperty("dt")
-    private Integer dt;
+    private String dt;
     @JsonProperty("sunrise")
     private Integer sunrise;
     @JsonProperty("sunset")
     private Integer sunset;
+    @JsonProperty("moonrise")
+    private Integer moonrise;
+    @JsonProperty("moonset")
+    private Integer moonset;
+    @JsonProperty("moon_phase")
+    private Double moonPhase;
     @JsonProperty("temp")
-    private Double temp;
+    private Temp temp;
     @JsonProperty("feels_like")
-    private Double feelsLike;
+    private FeelsLike feelsLike;
     @JsonProperty("pressure")
     private Integer pressure;
     @JsonProperty("humidity")
     private Integer humidity;
     @JsonProperty("dew_point")
     private Double dewPoint;
-    @JsonProperty("uvi")
-    private Double uvi;
-    @JsonProperty("clouds")
-    private Integer clouds;
-    @JsonProperty("visibility")
-    private Integer visibility;
     @JsonProperty("wind_speed")
     private Double windSpeed;
     @JsonProperty("wind_deg")
@@ -62,18 +70,28 @@ public class Current {
     @JsonProperty("wind_gust")
     private Double windGust;
     @JsonProperty("weather")
-    private List<Weather> weather = null;
+    private List<Weather__2> weather = null;
+    @JsonProperty("clouds")
+    private Integer clouds;
+    @JsonProperty("pop")
+    private Double pop;
+    @JsonProperty("rain")
+    private Double rain;
+    @JsonProperty("uvi")
+    private Double uvi;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("dt")
-    public Integer getDt() {
+    public String getDt() {
         return dt;
     }
 
     @JsonProperty("dt")
     public void setDt(Integer dt) {
-        this.dt = dt;
+        Locale.setDefault(Locale.US);
+        Format sdf = new SimpleDateFormat("EEEE, MM-dd");
+        this.dt = sdf.format(new Date(dt * 1000L));
     }
 
     @JsonProperty("sunrise")
@@ -96,23 +114,53 @@ public class Current {
         this.sunset = sunset;
     }
 
+    @JsonProperty("moonrise")
+    public Integer getMoonrise() {
+        return moonrise;
+    }
+
+    @JsonProperty("moonrise")
+    public void setMoonrise(Integer moonrise) {
+        this.moonrise = moonrise;
+    }
+
+    @JsonProperty("moonset")
+    public Integer getMoonset() {
+        return moonset;
+    }
+
+    @JsonProperty("moonset")
+    public void setMoonset(Integer moonset) {
+        this.moonset = moonset;
+    }
+
+    @JsonProperty("moon_phase")
+    public Double getMoonPhase() {
+        return moonPhase;
+    }
+
+    @JsonProperty("moon_phase")
+    public void setMoonPhase(Double moonPhase) {
+        this.moonPhase = moonPhase;
+    }
+
     @JsonProperty("temp")
-    public Double getTemp() {
+    public Temp getTemp() {
         return temp;
     }
 
     @JsonProperty("temp")
-    public void setTemp(Double temp) {
+    public void setTemp(Temp temp) {
         this.temp = temp;
     }
 
     @JsonProperty("feels_like")
-    public Double getFeelsLike() {
+    public FeelsLike getFeelsLike() {
         return feelsLike;
     }
 
     @JsonProperty("feels_like")
-    public void setFeelsLike(Double feelsLike) {
+    public void setFeelsLike(FeelsLike feelsLike) {
         this.feelsLike = feelsLike;
     }
 
@@ -146,36 +194,6 @@ public class Current {
         this.dewPoint = dewPoint;
     }
 
-    @JsonProperty("uvi")
-    public Double getUvi() {
-        return uvi;
-    }
-
-    @JsonProperty("uvi")
-    public void setUvi(Double uvi) {
-        this.uvi = uvi;
-    }
-
-    @JsonProperty("clouds")
-    public Integer getClouds() {
-        return clouds;
-    }
-
-    @JsonProperty("clouds")
-    public void setClouds(Integer clouds) {
-        this.clouds = clouds;
-    }
-
-    @JsonProperty("visibility")
-    public Integer getVisibility() {
-        return visibility;
-    }
-
-    @JsonProperty("visibility")
-    public void setVisibility(Integer visibility) {
-        this.visibility = visibility;
-    }
-
     @JsonProperty("wind_speed")
     public Double getWindSpeed() {
         return windSpeed;
@@ -207,13 +225,53 @@ public class Current {
     }
 
     @JsonProperty("weather")
-    public List<Weather> getWeather() {
+    public List<Weather__2> getWeather() {
         return weather;
     }
 
     @JsonProperty("weather")
-    public void setWeather(List<Weather> weather) {
+    public void setWeather(List<Weather__2> weather) {
         this.weather = weather;
+    }
+
+    @JsonProperty("clouds")
+    public Integer getClouds() {
+        return clouds;
+    }
+
+    @JsonProperty("clouds")
+    public void setClouds(Integer clouds) {
+        this.clouds = clouds;
+    }
+
+    @JsonProperty("pop")
+    public Double getPop() {
+        return pop;
+    }
+
+    @JsonProperty("pop")
+    public void setPop(Double pop) {
+        this.pop = pop;
+    }
+
+    @JsonProperty("rain")
+    public Double getRain() {
+        return rain;
+    }
+
+    @JsonProperty("rain")
+    public void setRain(Double rain) {
+        this.rain = rain;
+    }
+
+    @JsonProperty("uvi")
+    public Double getUvi() {
+        return uvi;
+    }
+
+    @JsonProperty("uvi")
+    public void setUvi(Double uvi) {
+        this.uvi = uvi;
     }
 
     @JsonAnyGetter
@@ -228,10 +286,11 @@ public class Current {
 
 	@Override
 	public String toString() {
-		return "Current [dt=" + dt + ", sunrise=" + sunrise + ", sunset=" + sunset + ", temp=" + temp + ", feelsLike="
-				+ feelsLike + ", pressure=" + pressure + ", humidity=" + humidity + ", dewPoint=" + dewPoint + ", uvi="
-				+ uvi + ", clouds=" + clouds + ", visibility=" + visibility + ", windSpeed=" + windSpeed + ", windDeg="
-				+ windDeg + ", windGust=" + windGust + ", weather=" + weather + ", additionalProperties="
+		return "Daily [dt=" + dt + ", sunrise=" + sunrise + ", sunset=" + sunset + ", moonrise=" + moonrise
+				+ ", moonset=" + moonset + ", moonPhase=" + moonPhase + ", temp=" + temp + ", feelsLike=" + feelsLike
+				+ ", pressure=" + pressure + ", humidity=" + humidity + ", dewPoint=" + dewPoint + ", windSpeed="
+				+ windSpeed + ", windDeg=" + windDeg + ", windGust=" + windGust + ", weather=" + weather + ", clouds="
+				+ clouds + ", pop=" + pop + ", rain=" + rain + ", uvi=" + uvi + ", additionalProperties="
 				+ additionalProperties + "]";
 	}
 

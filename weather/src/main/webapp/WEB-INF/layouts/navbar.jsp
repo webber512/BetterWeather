@@ -18,13 +18,16 @@
 							<span class="sr-only">(current)</span>
 					</a>
 					<li class="nav-item"><a class="nav-link" href="/hourly">Hourly</a></li>
-					<li class="nav-item"><a class="nav-link" href="/daily">7 Day Forecast</a></li>
+					<li class="nav-item"><a class="nav-link" href="/daily">7
+							Day Forecast</a></li>
 					<li class="nav-item"><a class="nav-link" href="/classes">Alerts</a></li>
-				
+
 				</ul>
-				<div class="my-2 my-lg-0">
-					<a class="nav-link text-white" href="#">Change Location (coming soon)</a>
-				</div>
+    			<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="Search for Location" aria-label="Search">
+					<button class="btn btn btn-outline-dark my-2 my-sm-0" type="submit">Go</button>
+				</form>
 			</div>
 		</nav>
 	</div>

@@ -1,5 +1,5 @@
 
-package com.alexwebber.weather.model;
+package com.alexwebber.weather.model.weather;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;

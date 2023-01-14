@@ -1,4 +1,4 @@
-package com.alexwebber.weather.model;
+package com.alexwebber.weather.model.weather;
 
 public class DailyPlot {
 

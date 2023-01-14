@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alexwebber.weather.model.Daily;
-import com.alexwebber.weather.model.DailyPlot;
-import com.alexwebber.weather.model.MainWeather;
+import com.alexwebber.weather.model.weather.Daily;
+import com.alexwebber.weather.model.weather.DailyPlot;
+import com.alexwebber.weather.model.weather.MainWeather;
 import com.alexwebber.weather.service.WeatherService;
 import com.google.gson.Gson;
 

@@ -1,5 +1,6 @@
 
-package com.alexwebber.weather.model;
+package com.alexwebber.weather.model.weather;
+
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "icon"
 })
 @Generated("jsonschema2pojo")
-public class Weather__1 {
+public class Weather {
 
     @JsonProperty("id")
     private Integer id;
@@ -83,7 +84,7 @@ public class Weather__1 {
 
 	@Override
 	public String toString() {
-		return "Weather__1 [id=" + id + ", main=" + main + ", description=" + description + ", icon=" + icon
+		return "Weather [id=" + id + ", main=" + main + ", description=" + description + ", icon=" + icon
 				+ ", additionalProperties=" + additionalProperties + "]";
 	}
 
