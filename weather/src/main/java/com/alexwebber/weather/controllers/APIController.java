@@ -17,19 +17,19 @@ import com.google.gson.Gson;
 
 @Controller
 public class APIController {
-	
+
 	@Autowired
 	WeatherService weatherService;
-	
+
 	@RequestMapping(value = "/api/daily/chart", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public String getDailyWeatherGraphData() {
-    	MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
-    	List<Daily> dailyList = we.getDaily();
-    	List<DailyPlot> dailyPlot = new ArrayList<DailyPlot>();
-    	for(Daily d : dailyList) {
-    		dailyPlot.add(new DailyPlot(d.getDt(),d.getTemp().getMax(),d.getTemp().getMin()));
-    	}
+		MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
+		List<Daily> dailyList = we.getDaily();
+		List<DailyPlot> dailyPlot = new ArrayList<DailyPlot>();
+		for (Daily d : dailyList) {
+			dailyPlot.add(new DailyPlot(d.getDt(), d.getTemp().getMax(), d.getTemp().getMin()));
+		}
 		Gson gson = new Gson();
 		String jsonStr = gson.toJson(dailyPlot);
 		StringBuilder sb = new StringBuilder();

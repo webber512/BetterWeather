@@ -12,7 +12,7 @@ import com.alexwebber.weather.service.GeocodingSerivce;
 
 @Service("geocodingService")
 public class GeocodingServiceImpl implements GeocodingSerivce {
-	
+
 	@Autowired
 	GeocodingRepository geocodingRepository;
 

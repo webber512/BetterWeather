@@ -9,7 +9,7 @@ public class WindUtil {
 			return false;
 		}
 	}
-	
+
 	public static String calculateWindDirection(int windDegrees) {
 		if (WindUtil.isBetween(windDegrees, 0, 20))
 			return "N";
@@ -48,6 +48,5 @@ public class WindUtil {
 		else
 			return "Error calculating wind direction: " + windDegrees;
 	}
-	
-	
+
 }

@@ -16,14 +16,14 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    public void configure(final WebSecurity web) {
+	@Override
+	public void configure(final WebSecurity web) {
 		web.ignoring().antMatchers("/", "/resources/**", "/login/", "/example/**");
-    }
-    
-    @Override
-    protected void configure(final HttpSecurity http) throws Exception {
-        http.csrf();
-    }
+	}
+
+	@Override
+	protected void configure(final HttpSecurity http) throws Exception {
+		http.csrf();
+	}
 
 }

@@ -35,7 +35,7 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 @EnableSpringDataWebSupport
 @ComponentScan("com.alexwebber.weather")
 public class WebMVCConfig implements WebMvcConfigurer {
-	
+
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 		converters.add(mappingJackson2HttpMessageConverter());
@@ -69,9 +69,10 @@ public class WebMVCConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(31555926);
-		
+
 		registry.setOrder(Integer.MIN_VALUE);
-        registry.addResourceHandler("/favicon.ico").addResourceLocations("/WEB-INF/views/favicon.ico").setCachePeriod(0);
+		registry.addResourceHandler("/favicon.ico").addResourceLocations("/WEB-INF/views/favicon.ico")
+				.setCachePeriod(0);
 	}
 
 	@Override
@@ -94,9 +95,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
 	@Bean
 	public TilesConfigurer tilesConfigurer() {
 		TilesConfigurer props = new TilesConfigurer();
-		props.setDefinitions("/WEB-INF/views.xml", 
-		                     "/WEB-INF/views/page-views.xml", 
-		                     "/WEB-INF/views/**/views.xml");
+		props.setDefinitions("/WEB-INF/views.xml", "/WEB-INF/views/page-views.xml", "/WEB-INF/views/**/views.xml");
 		return props;
 	}
 
@@ -107,7 +106,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
 		return props;
 	}
 
-	@Bean(name="Views")
+	@Bean(name = "Views")
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setViewClass(JstlView.class);
