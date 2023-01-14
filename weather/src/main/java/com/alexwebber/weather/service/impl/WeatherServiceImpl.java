@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.alexwebber.weather.dao.impl.WeatherRepository;
 import com.alexwebber.weather.model.MainWeather;
+import com.alexwebber.weather.model.Daily;
 import com.alexwebber.weather.model.Hourly;
 import com.alexwebber.weather.model.Weather;
 import com.alexwebber.weather.service.WeatherService;
@@ -27,5 +28,6 @@ public class WeatherServiceImpl implements WeatherService {
 	public Hourly getHourlyWeatherForLocation(String lat, String lon) {
 		return weatherRepository.getHourlyWeatherForLocation(lat, lon);
 	}
+
 
 }

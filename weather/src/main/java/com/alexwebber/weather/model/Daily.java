@@ -90,7 +90,7 @@ public class Daily {
     @JsonProperty("dt")
     public void setDt(Integer dt) {
         Locale.setDefault(Locale.US);
-        Format sdf = new SimpleDateFormat("EE, MM-dd");
+        Format sdf = new SimpleDateFormat("EEEE, MM-dd");
         this.dt = sdf.format(new Date(dt * 1000L));
     }
 

@@ -70,18 +70,6 @@
 <script type="text/javascript"
 	src="https://cdn.datatables.net/v/bs4/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.js"></script>
 
-<!-- Full Calendar -->
-<link type="text/css" rel="stylesheet"
-	href="<c:url value='/resources/css/vendor/fullcalendar/main.css'/>">
-<link type="text/css" rel="stylesheet"
-	href="<c:url value='/resources/css/vendor/fullcalendar/main-grid.css'/>">
-<link type="text/css" rel="stylesheet"
-	href="<c:url value='/resources/css/vendor/fullcalendar/bootstrap-main.css'/>">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<script
-	src="<c:url value='/resources/js/vendor/fullcalendar/main.js' />"></script>
-<script
-	src="<c:url value='/resources/js/vendor/fullcalendar/main-grid.js' />"></script>
-<script
-	src="<c:url value='/resources/js/vendor/fullcalendar/bootstrap-main.js'/>"></script>
 </head>

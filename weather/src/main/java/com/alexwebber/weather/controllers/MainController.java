@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.alexwebber.weather.model.MainWeather;
+import com.alexwebber.weather.model.Daily;
 import com.alexwebber.weather.model.Hourly;
 import com.alexwebber.weather.model.Weather;
 import com.alexwebber.weather.service.WeatherService;
@@ -26,25 +27,21 @@ public class MainController {
     @GetMapping(path="/")
     public String getExample(Model model, HttpServletRequest request, HttpSession session) {
     	MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
-    	//System.out.println("Current Temperature: " + we.getCurrent().getTemp());
     	model.addAttribute("currentTemp", we.getCurrent().getTemp());
-    	for (Hourly h : we.getHourly()) {
-    		System.out.println(h.getDt() + ", " + h.getTemp());
-    	}
      	return "home";
     }
     @GetMapping(path="/hourly")
     public String getHourly(Model model, HttpServletRequest request, HttpSession session) {
     	MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
-    	//System.out.println("Current Temperature: " + we.getCurrent().getTemp());
     	model.addAttribute("hourlyList", we.getHourly());
      	return "hourly";
     }
     @GetMapping(path="/daily")
     public String getDaily(Model model, HttpServletRequest request, HttpSession session) {
     	MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
-    	//System.out.println("Current Temperature: " + we.getCurrent().getTemp());
-    	model.addAttribute("dailyList", we.getDaily());
+    	List<Daily> dailyList = we.getDaily();
+    	dailyList.remove(dailyList.size()-1);
+    	model.addAttribute("dailyList", dailyList);
      	return "daily";
     }
 }

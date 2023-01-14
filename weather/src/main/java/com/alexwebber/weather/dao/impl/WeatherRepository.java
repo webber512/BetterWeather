@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import com.alexwebber.weather.model.MainWeather;
+import com.alexwebber.weather.model.Daily;
 import com.alexwebber.weather.model.Hourly;
 import com.alexwebber.weather.model.Weather;
 
@@ -31,5 +32,6 @@ public class WeatherRepository {
 		Hourly weather = restTemplate.getForObject("https://api.openweathermap.org/data/3.0/onecall?lat=" + lat
 				+ "&lon=" + lon + "&units=imperial&exclude=current,minutely,daily,alerts&appid=0591dee593552d56e945be2884db5134", Hourly.class);
 		return weather;
+	
 	}
 }

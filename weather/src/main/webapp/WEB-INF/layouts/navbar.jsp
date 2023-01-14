@@ -18,7 +18,7 @@
 							<span class="sr-only">(current)</span>
 					</a>
 					<li class="nav-item"><a class="nav-link" href="/hourly">Hourly</a></li>
-					<li class="nav-item"><a class="nav-link" href="/daily">Daily</a></li>
+					<li class="nav-item"><a class="nav-link" href="/daily">7 Day Forecast</a></li>
 					<li class="nav-item"><a class="nav-link" href="/classes">Alerts</a></li>
 				
 				</ul>
