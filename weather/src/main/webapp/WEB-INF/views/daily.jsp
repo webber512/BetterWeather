@@ -4,7 +4,7 @@
 <div class="container-fluid">
 	<br />
 	<h2>Weather for Lenexa, KS 66227</h2>
-
+	<div class="container-fluid">
 		<div class="row">
 			<c:forEach var="daily" items="${dailyList}">
 				<div class="card col-sm-6 col-md-3 col-lg">
@@ -16,6 +16,7 @@
 					</div>
 				</div>
 			</c:forEach>
+	</div>
 	</div>
 
 </div>

@@ -25,7 +25,7 @@ public class MainController {
 	WeatherService weatherService;
 	
     @GetMapping(path="/")
-    public String getExample(Model model, HttpServletRequest request, HttpSession session) {
+    public String getHome(Model model, HttpServletRequest request, HttpSession session) {
     	MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
     	model.addAttribute("currentTemp", we.getCurrent().getTemp());
      	return "home";
