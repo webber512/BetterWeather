@@ -8,15 +8,25 @@
 		<div class="row">
 			<c:forEach var="daily" items="${dailyList}">
 				<div class="card col-sm-6 col-md-3 col-lg">
-					<img class="card-img-top" src="https://openweathermap.org/img/wn/${daily.weather[0].icon}@4x.png" alt="Card image cap">
+					<img class="card-img-top"
+						src="https://openweathermap.org/img/wn/${daily.weather[0].icon}@4x.png"
+						alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">${daily.dt}</h5>
-						<h6>H ${daily.temp.max} / L ${daily.temp.min}</h6>
+						<h6>
+							H
+							<fmt:formatNumber value="${daily.temp.max}" minFractionDigits="0"
+								maxFractionDigits="0" />
+							&deg;F / L
+							<fmt:formatNumber value="${daily.temp.min}" minFractionDigits="0"
+								maxFractionDigits="0" />
+							&deg;F
+						</h6>
 						<p class="card-text">${daily.weather[0].description }</p>
 					</div>
 				</div>
 			</c:forEach>
-	</div>
+		</div>
 	</div>
 
 </div>

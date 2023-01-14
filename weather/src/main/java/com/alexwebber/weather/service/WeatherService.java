@@ -10,7 +10,8 @@ import com.alexwebber.weather.model.Weather;
 public interface WeatherService {
 
 	public MainWeather getAllWeatherForLocation(String lat, String lon);
+
 	public Hourly getHourlyWeatherForLocation(String lat, String lon);
-	//public List<Daily> getDailyWeatherForLocation(String lat, String lon);
-	
+	// public List<Daily> getDailyWeatherForLocation(String lat, String lon);
+
 }

@@ -14,10 +14,9 @@ import com.alexwebber.weather.service.WeatherService;
 
 @Service("weatherService")
 public class WeatherServiceImpl implements WeatherService {
-	
+
 	@Autowired
 	WeatherRepository weatherRepository;
-
 
 	@Override
 	public MainWeather getAllWeatherForLocation(String lat, String lon) {
@@ -28,6 +27,5 @@ public class WeatherServiceImpl implements WeatherService {
 	public Hourly getHourlyWeatherForLocation(String lat, String lon) {
 		return weatherRepository.getHourlyWeatherForLocation(lat, lon);
 	}
-
 
 }
