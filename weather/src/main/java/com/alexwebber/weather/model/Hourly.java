@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import javax.annotation.Generated;
+
+import com.alexwebber.weather.util.WindUtil;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -53,6 +55,7 @@ public class Hourly {
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	private String main;
+	private String windDirection;
 
 	@JsonProperty("dt")
 	public String getDt() {
@@ -208,8 +211,8 @@ public class Hourly {
 
 	@Override
 	public String toString() {
-		return "Hourly [dt=" + dt + ", temp=" + temp + ", feelsLike=" + feelsLike + ", pressure=" + pressure
-				+ ", humidity=" + humidity + ", dewPoint=" + dewPoint + ", uvi=" + uvi + ", clouds=" + clouds
+		return this.windDirection = "Hourly [dt=" + dt + ", temp=" + temp + ", feelsLike=" + feelsLike + ", pressure="
+				+ pressure + ", humidity=" + humidity + ", dewPoint=" + dewPoint + ", uvi=" + uvi + ", clouds=" + clouds
 				+ ", visibility=" + visibility + ", windSpeed=" + windSpeed + ", windDeg=" + windDeg + ", windGust="
 				+ windGust + ", weather=" + weather + ", pop=" + pop + ", additionalProperties=" + additionalProperties
 				+ "]";
@@ -221,6 +224,14 @@ public class Hourly {
 
 	public void setMain(String main) {
 		this.main = weather.get(0).getDescription();
+	}
+
+	public String getWindDirection() {
+		return windDirection;
+	}
+
+	public void setWindDirection() {
+		this.windDirection = WindUtil.calculateWindDirection(getWindDeg());
 	}
 
 }

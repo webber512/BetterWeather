@@ -33,7 +33,11 @@ public class MainController {
 	@GetMapping(path = "/hourly")
 	public String getHourly(Model model, HttpServletRequest request, HttpSession session) {
 		MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
-		model.addAttribute("hourlyList", we.getHourly());
+		List<Hourly> hourlyList = we.getHourly();
+		for (Hourly h : hourlyList) {
+			h.setWindDirection();
+		}
+		model.addAttribute("hourlyList", hourlyList);
 		return "hourly";
 	}
 
