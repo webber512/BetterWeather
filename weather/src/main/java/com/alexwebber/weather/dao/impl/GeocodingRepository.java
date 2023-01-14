@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import com.alexwebber.weather.model.geocoding.Geocoding;
-import com.alexwebber.weather.model.weather.Weather;
 
 @Repository
 public class GeocodingRepository {

@@ -3,7 +3,6 @@ package com.alexwebber.weather.controllers;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import com.alexwebber.weather.model.geocoding.Geocoding;
 import com.alexwebber.weather.model.weather.Daily;
 import com.alexwebber.weather.model.weather.Hourly;
 import com.alexwebber.weather.model.weather.MainWeather;
-import com.alexwebber.weather.model.weather.Weather;
 import com.alexwebber.weather.service.GeocodingSerivce;
 import com.alexwebber.weather.service.WeatherService;
 

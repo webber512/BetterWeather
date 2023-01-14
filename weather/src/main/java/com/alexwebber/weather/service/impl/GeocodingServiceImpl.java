@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alexwebber.weather.dao.impl.GeocodingRepository;
-import com.alexwebber.weather.dao.impl.WeatherRepository;
 import com.alexwebber.weather.model.geocoding.Geocoding;
 import com.alexwebber.weather.service.GeocodingSerivce;
 
