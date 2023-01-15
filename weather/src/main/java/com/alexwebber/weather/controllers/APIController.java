@@ -14,6 +14,7 @@ import com.alexwebber.weather.model.weather.DailyPlot;
 import com.alexwebber.weather.model.weather.MainWeather;
 import com.alexwebber.weather.service.WeatherService;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 @Controller
 public class APIController {
@@ -21,20 +22,22 @@ public class APIController {
 	@Autowired
 	WeatherService weatherService;
 
-	@RequestMapping(value = "/api/daily/chart", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/api/daily/chart", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String getDailyWeatherGraphData() {
 		MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
 		List<Daily> dailyList = we.getDaily();
-		List<DailyPlot> dailyPlot = new ArrayList<DailyPlot>();
+		List<JsonObject> jsonObjects = new ArrayList<JsonObject>();
 		for (Daily d : dailyList) {
-			dailyPlot.add(new DailyPlot(d.getDt(), d.getTemp().getMax(), d.getTemp().getMin()));
+			JsonObject obj = new JsonObject();
+			obj.addProperty("date", d.getDt());
+			obj.addProperty("y_high", d.getTemp().getMax());
+			obj.addProperty("y_low", d.getTemp().getMin());
+			jsonObjects.add(obj);
 		}
-		Gson gson = new Gson();
-		String jsonStr = gson.toJson(dailyPlot);
-		StringBuilder sb = new StringBuilder();
-		jsonStr.replaceAll("\\\\", "");
-		sb.append(jsonStr);
-		return sb.toString();
+
+		String response = new Gson().toJson(jsonObjects).toString().replaceAll("\\\\", "");
+		System.out.println(response);
+		return response;
 	}
 }

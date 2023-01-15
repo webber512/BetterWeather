@@ -28,17 +28,5 @@
 			</c:forEach>
 		</div>
 	</div>
-
 </div>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <%@ include file="/WEB-INF/layouts/footer.jsp"%>

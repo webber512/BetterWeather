@@ -37,4 +37,12 @@ public class DailyPlot {
 		this.y_low = y_low;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder b = new StringBuilder();
+		return "{\"label\":\"" + label + "\", \"y_high\":" + y_high + ", \"y_low\":" + y_low + "}";
+	}
+
+	
+	
 }

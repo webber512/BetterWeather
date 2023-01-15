@@ -71,5 +71,5 @@
 	src="https://cdn.datatables.net/v/bs4/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.js"></script>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 </head>
