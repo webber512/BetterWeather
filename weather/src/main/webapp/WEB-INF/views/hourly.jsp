@@ -26,7 +26,8 @@
 							${hourly.weather[0].main}<br /> ${hourly.weather[0].description }</td>
 						<td><fmt:formatNumber value="${hourly.temp}" minFractionDigits="0" maxFractionDigits="0"/>&deg;F</td>
 						<td><fmt:formatNumber value="${hourly.pop * 100 }" minFractionDigits="0" maxFractionDigits="0"/>%</td>
-						<td><fmt:formatNumber value="${hourly.windSpeed}" minFractionDigits="1" maxFractionDigits="1"/> mph ${hourly.windDirection }</td>
+						<td><fmt:formatNumber value="${hourly.windSpeed}" minFractionDigits="1" maxFractionDigits="1"/> mph ${hourly.windDirection }<br/>
+						Gusting to <fmt:formatNumber value="${hourly.windGust}" minFractionDigits = "1" maxFractionDigits="1"/> mph</td>
 					</tr>
 				</c:forEach>
 			</tbody>

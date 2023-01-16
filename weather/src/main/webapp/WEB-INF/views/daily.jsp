@@ -27,6 +27,9 @@
 				</div>
 			</c:forEach>
 		</div>
+		<div class="row">
+		    <div>Future weather graph</div>
+		</div>
 	</div>
 </div>
 <%@ include file="/WEB-INF/layouts/footer.jsp"%>

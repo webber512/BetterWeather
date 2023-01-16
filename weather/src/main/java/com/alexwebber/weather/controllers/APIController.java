@@ -22,8 +22,8 @@ public class APIController {
 	@Autowired
 	WeatherService weatherService;
 
-	@RequestMapping(value = "/api/daily/chart", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-	@ResponseBody
+//	@RequestMapping(value = "/api/daily/chart", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+//	@ResponseBody
 	public String getDailyWeatherGraphData() {
 		MainWeather we = weatherService.getAllWeatherForLocation("38.953", "-94.733");
 		List<Daily> dailyList = we.getDaily();

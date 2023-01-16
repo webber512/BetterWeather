@@ -1,5 +1,6 @@
 package com.alexwebber.weather.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,8 @@ import com.alexwebber.weather.model.weather.Hourly;
 import com.alexwebber.weather.model.weather.MainWeather;
 import com.alexwebber.weather.service.GeocodingSerivce;
 import com.alexwebber.weather.service.WeatherService;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 @Controller
 public class MainController {
@@ -51,6 +54,17 @@ public class MainController {
 		List<Daily> dailyList = we.getDaily();
 		dailyList.remove(dailyList.size() - 1);
 		model.addAttribute("dailyList", dailyList);
+		
+		List<JsonObject> jsonObjects = new ArrayList<JsonObject>();
+		for (Daily d : dailyList) {
+			JsonObject obj = new JsonObject();
+			obj.addProperty("date", d.getDt());
+			obj.addProperty("y_high", d.getTemp().getMax());
+			obj.addProperty("y_low", d.getTemp().getMin());
+			jsonObjects.add(obj);
+		}
+		String dailyGraph = new Gson().toJson(jsonObjects).toString().replaceAll("\\\\", "");
+		model.addAttribute("dailyGraph", dailyGraph);
 		return "daily";
 	}
 }
